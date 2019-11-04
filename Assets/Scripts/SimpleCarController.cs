@@ -8,17 +8,27 @@ public class SimpleCarController : MonoBehaviour
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
     private Rigidbody rb;
+    private Vector3 originalPos;
+
+
+
 
 
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
+   //     initial = GetComponent<Transform>();
+
     
     }
 
 
     public void FixedUpdate()
     {
+        var xRotationLimit = 30;
+        var yRotationLimit = 999;
+        var zRotationLimit = 999;
+
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
@@ -34,6 +44,10 @@ public class SimpleCarController : MonoBehaviour
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
+
+
+           
+
         }
     }
 }
@@ -46,3 +60,7 @@ public class AxleInfo
     public bool motor; // is this wheel attached to motor?
     public bool steering; // does this wheel apply steer angle?
 }
+
+
+
+

@@ -6,23 +6,17 @@ using UnityEngine.UI;
 public class ScoreCounter : MonoBehaviour
 {
 
-  //  public Text countText;
-  //  public Text winText;
-
     private Rigidbody rb;
-  //  private int count;
+  
 
     private GameController gameController;
-    public int scoreValue;
-    public int junkValue;
+  //  public int scoreValue;
+   // public int junkValue;
+    private Quaternion initial;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-    //    count = 0;
-    //    SetCountText();
-    //    winText.text = "";
-
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         if (gameControllerObject != null)
         {
@@ -37,34 +31,27 @@ public class ScoreCounter : MonoBehaviour
 
     void FixedUpdate()
     {
-
-
+        if (Input.GetKeyDown(KeyCode.R))
+            transform.rotation = initial;
     }
     void OnTriggerEnter(Collider other)
     {
        if (other.gameObject.CompareTag("Pick Up"))
         {
             other.gameObject.SetActive(false);
-            gameController.AddScore(scoreValue);
-            //          count = count + 1;
-            //          SetCountText();
+            gameController.AddScore(1);
+           // initial = other.transform.rotation;
+
         }
         if (other.gameObject.CompareTag("Junk"))
         {
             other.gameObject.SetActive(false);
-            gameController.AddScore(junkValue);
-            //          count = count + 1;
-  //          SetCountText();
+            gameController.AddScore(0);
+          //  initial = other.transform.rotation;
+
         }
 
     }
-  //  void SetCountText()
-  //  {
-   //     countText.text = "Count: " + count.ToString();
-    //    if (count >= 4)
-    //    {
-    //        winText.text = "You win";
-    //    }
-   // }
+
 
 }

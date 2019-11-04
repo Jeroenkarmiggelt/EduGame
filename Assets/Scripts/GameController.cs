@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     public Text scoreText;
     public Text restartText;
     public Text gameOverText;
+    public int scoreValue;
+    public int junkValue;
 
     private bool gameOver;
     private bool restart;
@@ -58,8 +60,12 @@ public class GameController : MonoBehaviour
 
     public void AddScore(int newScoreValue)
     {
-        score += newScoreValue;
-        UpdateScore();
+        if (newScoreValue == 1)
+            score += scoreValue;
+            UpdateScore();
+        if (newScoreValue == 0)
+            score += junkValue;
+            UpdateScore();
         if (score == winScore)
         {
             GameOver();

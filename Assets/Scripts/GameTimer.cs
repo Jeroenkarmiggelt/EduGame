@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameTimer : MonoBehaviour
 {
 
-    public int timeLeft;
+    public int gameTime;
     public Text countdownText;
 
     // Use this for initialization
@@ -19,9 +19,9 @@ public class GameTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        countdownText.text = ("Time Left = " + timeLeft);
+        countdownText.text = ("Time Left = " + gameTime);
 
-        if (timeLeft <= 0)
+        if (gameTime <= 0)
         {
             StopCoroutine("LoseTime");
             countdownText.text = "Times Up!";
@@ -34,7 +34,7 @@ public class GameTimer : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            timeLeft--;
+            gameTime--;
         }
     }
 }
