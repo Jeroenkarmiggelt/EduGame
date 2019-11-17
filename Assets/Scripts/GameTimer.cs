@@ -8,6 +8,7 @@ public class GameTimer : MonoBehaviour
 
     public int gameTime;
     public Text countdownText;
+    private GameController gameController;
 
     // Use this for initialization
     void Start()
@@ -25,6 +26,7 @@ public class GameTimer : MonoBehaviour
         {
             StopCoroutine("LoseTime");
             countdownText.text = "Times Up!";
+            gameController.GameOver();
             //Application.Quit();
         }
     }

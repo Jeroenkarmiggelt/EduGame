@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/edugame_smaller_v2driver.unity
+    guid: a95cb1b04023cc64da54fb660683958a
   m_configObjects: {}

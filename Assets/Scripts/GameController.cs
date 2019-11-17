@@ -45,19 +45,6 @@ public class GameController : MonoBehaviour
         }
     }
 
-   public void SpawnWaves()
-    {
- 
-
-            if (gameOver)
-            {
-                restartText.text = "Press 'R' for Restart";
-                restart = true;
-         //       break;
-            }
- 
-    }
-
     public void AddScore(int newScoreValue)
     {
         if (newScoreValue == 1)
@@ -81,8 +68,8 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0;
-        gameOverText.text = "Game Over!";
-        restartText.text = "Press 'R' for Restart";
+        gameOverText.text = "Het spel is afgelopen! Je eindscore is: " + score;
+        restartText.text = "Je kunt nog een keer spelen door op 'R' te drukken.";
         restart = true;
         gameOver = true;
     }

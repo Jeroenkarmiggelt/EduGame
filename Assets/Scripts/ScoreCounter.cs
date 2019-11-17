@@ -10,8 +10,6 @@ public class ScoreCounter : MonoBehaviour
   
 
     private GameController gameController;
-  //  public int scoreValue;
-   // public int junkValue;
     private Quaternion initial;
 
     void Start()
@@ -47,8 +45,13 @@ public class ScoreCounter : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             gameController.AddScore(0);
-          //  initial = other.transform.rotation;
+        }
 
+
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            other.gameObject.SetActive(false);
+            gameController.GameOver();
         }
 
     }
