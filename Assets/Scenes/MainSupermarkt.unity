@@ -291,10 +291,8 @@ GameObject:
   m_Component:
   - component: {fileID: 131545325}
   - component: {fileID: 131545324}
-  - component: {fileID: 131545323}
   - component: {fileID: 131545322}
   - component: {fileID: 131545326}
-  - component: {fileID: 131545327}
   m_Layer: 0
   m_Name: Shopping Car
   m_TagString: Untagged
@@ -317,22 +315,6 @@ MonoBehaviour:
   maxAngle: 30
   maxTorque: 800
   wheelShape: {fileID: 115660, guid: c4b1e6c451cdd40998befa14853156d8, type: 3}
---- !u!114 &131545323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131545321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61682be5314d0440b9e67529196ac1a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  naturalFrequency: 10
-  dampingRatio: 1.39
-  forceShift: 0.03
-  setSuspensionDistance: 1
 --- !u!54 &131545324
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -380,18 +362,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbadaceb398e75a4cb45c7bb08ac9ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &131545327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131545321}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc924ed197eb2c844a7e61934294badb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &161114846
@@ -1324,7 +1294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715591134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.68, y: 12.232489, z: 41.15}
+  m_LocalPosition: {x: 51.68, y: 12.232489, z: 39.97}
   m_LocalScale: {x: 0.05, y: 3.8756437, z: 6.995249}
   m_Children: []
   m_Father: {fileID: 1938544865}
@@ -2245,7 +2215,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: e50891c155f1b744aacaaa8061c9803e, type: 3}
       propertyPath: m_Name
-      value: cart_blue (1)
+      value: cart
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e50891c155f1b744aacaaa8061c9803e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3542,7 +3512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3e74d7268dd8f419aa2b1f04a0e40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winScore: 5
   scoreText: {fileID: 2095100879}
   restartText: {fileID: 342921978}
   gameOverText: {fileID: 176182544}
@@ -4130,7 +4099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787182193}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.89, y: 12.232489, z: 35.53}
+  m_LocalPosition: {x: 34.89, y: 12.232489, z: 32.94}
   m_LocalScale: {x: 0.05, y: 3.8756437, z: 14.36}
   m_Children: []
   m_Father: {fileID: 1938544865}
@@ -4997,7 +4966,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978823147}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1626f959b58bc8f4d97c7472a8c97c4d, type: 3}
   m_Name: 
@@ -5026,7 +4995,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978823147}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48220911a5210b74a9210cbda59ca8b8, type: 3}
   m_Name: 

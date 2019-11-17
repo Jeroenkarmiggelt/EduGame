@@ -4,17 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
-{
-
-    private Rigidbody rb;
-  
-
+{    
     private GameController gameController;
     private Quaternion initial;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        // Check if GameController exists
+
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         if (gameControllerObject != null)
         {
@@ -29,6 +26,7 @@ public class ScoreCounter : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Reset shopping cart with button R press
         if (Input.GetKeyDown(KeyCode.R))
             transform.rotation = initial;
     }
@@ -38,17 +36,15 @@ public class ScoreCounter : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             gameController.AddScore(1);
-           // initial = other.transform.rotation;
+           // initial = other.transform.rotation; //Test to store rotation settings on pickup
 
         }
-        if (other.gameObject.CompareTag("Junk"))
+       if (other.gameObject.CompareTag("Junk"))
         {
             other.gameObject.SetActive(false);
             gameController.AddScore(0);
         }
-
-
-        if (other.gameObject.CompareTag("Finish"))
+       if (other.gameObject.CompareTag("Finish"))
         {
             other.gameObject.SetActive(false);
             gameController.GameOver();

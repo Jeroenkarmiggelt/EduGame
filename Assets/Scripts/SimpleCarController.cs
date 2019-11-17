@@ -25,9 +25,9 @@ public class SimpleCarController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        var xRotationLimit = 30;
-        var yRotationLimit = 999;
-        var zRotationLimit = 999;
+//        var xRotationLimit = 30;
+//        var yRotationLimit = 999;
+//        var zRotationLimit = 999;
 
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");

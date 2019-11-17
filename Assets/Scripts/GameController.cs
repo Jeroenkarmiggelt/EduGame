@@ -5,13 +5,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-   // public GameObject hazard;
-   // public Vector3 spawnValues;
-   // public int hazardCount;
-    public float winScore;
-   // public float startWait;
-   // public float waveWait;
 
+    // public float winScore;    // Alleen nodig bij een ander win-model (haal XX punten = win)
     public Text scoreText;
     public Text restartText;
     public Text gameOverText;
@@ -28,14 +23,13 @@ public class GameController : MonoBehaviour
         restart = false;
         restartText.text = "";
         gameOverText.text = "";
-    //    score = 0;
         UpdateScore();
-     //   StartCoroutine(SpawnWaves());
+
     }
 
     void Update()
     {
-        if (restart)
+        if (restart)  // Only if status restart = true game resets on R button press.
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -53,11 +47,11 @@ public class GameController : MonoBehaviour
         if (newScoreValue == 0)
             score += junkValue;
             UpdateScore();
-        if (score == winScore)
+     /*   if (score == winScore)
         {
             GameOver();
         }
-
+        */
     }
 
     void UpdateScore()
