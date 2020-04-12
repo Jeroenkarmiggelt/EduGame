@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
 
     private bool gameOver;
     private bool restart;
-    private int score;
+    public static int score;
 
     void Start()
     {
@@ -31,11 +31,13 @@ public class GameController : MonoBehaviour
     {
         if (restart)  // Only if status restart = true game resets on R button press.
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                Application.LoadLevel(Application.loadedLevel);
+                score = 0;
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
                 Time.timeScale = 1;
             }
+
         }
     }
 
@@ -63,8 +65,43 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 0;
         gameOverText.text = "Het spel is afgelopen! Je eindscore is: " + score;
-        restartText.text = "Je kunt nog een keer spelen door op 'R' te drukken.";
+        restartText.text = "Druk op spatie om naar het menu te gaan.";
         restart = true;
         gameOver = true;
+        CallSaveData();
     }
+
+    public void CallSaveData()
+    {
+        StartCoroutine(SavePlayerData());
+
+    }
+
+    IEnumerator SavePlayerData()
+    {
+        if (DBManager.score < score)
+        {
+            DBManager.score = score;
+            WWWForm form = new WWWForm();
+            form.AddField("name", DBManager.username);
+            form.AddField("score", DBManager.score);
+
+            WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form);
+            yield return www;
+            if (www.text == "0")
+            {
+                Debug.Log("Game Saved.");
+            }
+            else
+            {
+                Debug.Log("Save failed. Error #" + www.text);
+            }
+        }
+
+    }
+
 }
+
+
+
+

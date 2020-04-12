@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "904110465293",
+    "firebase_url": "https://edugame-94078.firebaseio.com",
+    "project_id": "edugame-94078",
+    "storage_bucket": "edugame-94078.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904110465293:android:5d4905dd443e2a29109044",
+        "android_client_info": {
+          "package_name": "com.Jeroen.EduGame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904110465293-tr329vij053hvessdt36ue8m9pj5v4dr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7E29IETmxRdLoJ8dDXkbZitrS6oPV2WM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904110465293-tr329vij053hvessdt36ue8m9pj5v4dr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
