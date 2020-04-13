@@ -43,7 +43,7 @@ public class DataLoader : MonoBehaviour {
 
 	IEnumerator Data()
     {
-		WWW playerData = new WWW("http://localhost/sqlconnect/highscore.php");
+		WWW playerData = new WWW("http://64.227.64.26/sqlconnect/highscore.php");
 		yield return playerData;
 		string playerDataString = playerData.text;
 		

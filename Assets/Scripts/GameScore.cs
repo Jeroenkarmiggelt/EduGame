@@ -36,7 +36,7 @@ public class GameScore : MonoBehaviour
         form.AddField("name", DBManager.username);
         form.AddField("score", GameController.score);
 
-        WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form);
+        WWW www = new WWW("http://64.227.64.26/sqlconnect/savedata.php", form);
         yield return www;
         if (www.text == "0")
         {
